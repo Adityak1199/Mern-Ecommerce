@@ -17,24 +17,26 @@ function CreateProduct() {
     const { loading, error, success } = useSelector((state) => state.admin);
     const dispatch = useDispatch();
 
-    const categories =[
-        "Mobile",
-        "Laptop",
-        "Gadgets",
-        "Shirt",
-        "Jeans",
-        "Shoes",
-        "Cap",
-        "T-Shirts",
-        "Top",
-        "Women's Wear",
-        "Watch",
-        "Beauty",
-        "Health",
-        "Sports",
-        "Outdoor",
-        "Home"
-    ]
+    const categories = [
+  "Smartphones",
+  "Laptops & PCs",
+  "Electronics & Gadgets",
+  "Men's Fashion",
+  "Women's Fashion",
+  "Mens's Footwear",
+  "Caps & Accessories",
+  "Watches & Wearables",
+  "Beauty & Skincare",
+  "Health & Wellness",
+  "Sports & Fitness",
+  "Outdoor & Travel",
+  "Home & Living",
+  "Lifestyle Essentials",
+  "Books & Stationery",
+  "Toys & Games",
+  "Musical Instruments",
+];
+
     const createProductSubmit = (e) => {
         e.preventDefault();
         const myForm = new FormData();
