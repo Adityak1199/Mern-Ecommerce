@@ -23,20 +23,26 @@ function Products() {
     const category = searchParams.get('category');
     const pageFromUrl = parseInt(searchParams.get('page'),10) || 1;
     const [currentPage, setCurrentPage] = useState(pageFromUrl);
-    const categories=[
-        'Mobile',
-        'Camera',
-        'Laptop',
-        'Accessories',
-        'Headphones',
-        'Food',
-        'Books',
-        'Clothes/Shoes',
-        'Beauty/Health',
-        'Sports',
-        'Outdoor',
-        'Home'
-    ]
+    const categories = [
+  "Smartphones",
+  "Laptops & PCs",
+  "Electronics & Gadgets",
+  "Men's Fashion",
+  "Women's Fashion",
+  "Mens's Footwear",
+  "Caps & Accessories",
+  "Watches & Wearables",
+  "Beauty & Skincare",
+  "Health & Wellness",
+  "Sports & Fitness",
+  "Outdoor & Travel",
+  "Home & Living",
+  "Lifestyle Essentials",
+  "Books & Stationery",
+  "Toys & Games",
+  "Musical Instruments",
+];
+
     const navigate = useNavigate();
     console.log(keyword);
     useEffect(() => {
