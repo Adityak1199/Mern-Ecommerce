@@ -25,16 +25,16 @@ app.use("/api/v1",order);
 app.use("/api/v1",payment);
 
 // serve static file
-app.use(express.static(path.join(__dirname,"../frontend/dist")));
+app.use(express.static(path.join(__dirname,"../Frontend/dist")));
 app.use((req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"));
+  res.sendFile(path.resolve(__dirname, "../Frontend/dist/index.html"));
 });
 
 
 
 app.use(errorHandleMiddleware);
 if(process.env.NODE_ENV !=='PRODUCTION'){
-dotenv.config({path:"backend/config/config.env"});
+dotenv.config({path:"Backend/config/config.env"});
 }
 
 
