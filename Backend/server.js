@@ -5,9 +5,9 @@ import {v2 as cloudinary} from "cloudinary";
 import Razorpay from "razorpay";
 
 // dotenv.config({path:"backend/config/config.env"});
-if(process.env.NODE_ENV !=='PRODUCTION'){
+// if(process.env.NODE_ENV !=='PRODUCTION'){
 dotenv.config({path:"Backend/config/config.env"});
-}
+// }
 connectMongoDatabase();
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
