@@ -30,6 +30,11 @@ import UserList from './Admin/UserList.jsx'
 import UpdateRole from './Admin/UpdateRole.jsx'
 import OrdersList from './Admin/OrdersList.jsx'
 import UpdateOrder from './Admin/UpdateOrder.jsx'
+import AIAssistant from './AI/AIAssistant.jsx'
+import AIHistory from './AI/AIHistory.jsx'
+import AIChatbot from './AI/AIChatbot.jsx'
+import SmartReplenishment from './AI/SmartReplenishment.jsx'
+import ExplainableAI from './AI/ExplainableAI.jsx'
 
 const App = () => {
   const {isAuthenticated , user} = useSelector(state => state.user);
@@ -75,8 +80,15 @@ const App = () => {
          <Route path="/admin/user/:userId" element={<ProtectedRoutes element={<UpdateRole/>} adminOnly={true} />} />
          <Route path="/admin/orders" element={<ProtectedRoutes element={<OrdersList/>} adminOnly={true} />} />
          <Route path="/admin/order/:orderId" element={<ProtectedRoutes element={<UpdateOrder/>} adminOnly={true} />} />
+
+         {/* AI Routes */}
+         <Route path="/ai/assistant" element={<ProtectedRoutes element={<AIAssistant/>}/>} />
+         <Route path="/ai/history" element={<ProtectedRoutes element={<AIHistory/>}/>} />
+         <Route path="/ai/replenishment" element={<ProtectedRoutes element={<SmartReplenishment/>}/>} />
+         <Route path="/ai/personalized" element={<ProtectedRoutes element={<ExplainableAI/>}/>} />
       </Routes>
       {isAuthenticated && <UserDashboard user={user}/>}
+    {isAuthenticated && <AIChatbot />}
     </Router>
     </>
   )

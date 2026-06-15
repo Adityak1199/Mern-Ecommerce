@@ -12,6 +12,9 @@ function UserDashboard({user}) {
     }
     const {cartItems} = useSelector(state => state.cart);
     const options =[
+        {name:'AI Assistant',funcName:aiAssistant, isAI:true },
+        {name:'Smart Refill',funcName:smartRefill },
+        {name:'AI Picks',funcName:aiPicks },
         {name:'Orders',funcName:orders },
         {name:'Account',funcName:account },
         {name:`Cart (${cartItems.length})`,funcName:myCart , isCart:true},
@@ -25,6 +28,15 @@ function UserDashboard({user}) {
     const navigate = useNavigate();
     function orders(){
         navigate("/orders/user")
+    }
+    function aiAssistant(){
+        navigate("/ai/assistant")
+    }
+    function smartRefill(){
+        navigate("/ai/replenishment")
+    }
+    function aiPicks(){
+        navigate("/ai/personalized")
     }
     function account(){
         navigate("/profile")
@@ -65,7 +77,7 @@ function UserDashboard({user}) {
         <span className="profile-name">{user.name||"User"}</span>
         </div>
        {menuVisible &&( <div className="menu-options">
-            {options.map((item)=>(<button className={`menu-option-btn ${item.isCart ? (cartItems.length>0?'cart-not-empty':""):""} `}onClick={item.funcName} key={item.name}>{item.name}</button>))}
+            {options.map((item)=>(<button className={`menu-option-btn ${item.isCart ? (cartItems.length>0?'cart-not-empty':""):""} ${item.isAI ? 'ai-btn-glow' : ''}`}onClick={item.funcName} key={item.name}>{item.name}</button>))}
         </div>)}
     </div>
     </>

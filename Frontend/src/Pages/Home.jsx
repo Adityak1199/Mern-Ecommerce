@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProduct, removeError } from '../features/products/productSlice';
 import Loader from '../Components/Loader';
 import { toast } from 'react-toastify';
+import SmartReplenishmentHome from '../AI/SmartReplenishmentHome';
 
 
 function Home() {
@@ -35,6 +36,7 @@ function Home() {
     <Navbar/>
     <PageTitle title="Home-My Website"/>
     <ImageSlider/>
+    <SmartReplenishmentHome/>
     <div className="home-container">
         <h2 className="home-heading">Trending Now</h2>
         <div className="home-product-container">
